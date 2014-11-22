@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mime;
 using System.Web.Http;
 using DA;
 using Domain.Objects;
+using Newtonsoft.Json;
 
 namespace GreenReceiptApi.Controllers
 {
@@ -23,19 +25,29 @@ namespace GreenReceiptApi.Controllers
         }
 
         // GET api/users/5
-        public string Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            return DA.DA.LoadById<User>(id);
         }
 
-        // POST api/users
+        // POST api/users //Add a new user Database
         public void Post([FromBody]string value)
         {
+            User user = new User
+            {
+                Email = "kz@hotmail.com",
+                FirstName = "Kingsley",
+                LastName = "Zheng",
+                Password = "666555777",
+                Username = "kingtown"
+            };
+            user.Save();
         }
 
-        // PUT api/users/5
+        // PUT api/users/5 //Update a user in database
         public void Put(int id, [FromBody]string value)
         {
+            
         }
 
         // DELETE api/users/5
