@@ -17,10 +17,13 @@ namespace GreenReceiptApi.Controllers
         public IEnumerable<User> Get()
         {
             List<User> users;
+            
             using (Context context = new Context())
             {
                 users = context.Users.ToList();
             }
+
+
             return users;
         }
 
