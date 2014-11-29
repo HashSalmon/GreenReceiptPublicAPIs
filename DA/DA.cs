@@ -20,7 +20,7 @@ namespace DA
                 {
                     if (obj.Id == 0)
                     {
-                        obj.CreatedDate = DateTime.Now;
+                        //obj.CreatedDate = DateTime.Now;
                         context.Set<T>().Add(obj);
                     }
                     else

@@ -14,7 +14,7 @@ namespace DA
         public DbSet<User> Users { get; set; } 
 
         public Context()
-            : base(new MySqlConnection("Server=localhost;Database=greenreceipt;Uid=root;Pwd=Aa8175014;"), true)
+            : base(new MySqlConnection("Server=localhost;Database=db;Uid=root;Pwd=zheng;"), true)
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

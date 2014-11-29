@@ -9,6 +9,6 @@ namespace Domain
     public class IBase
     {
         public long Id { get; set; }
-        public DateTime CreatedDate { get; set; }
+        //public DateTime CreatedDate { get; set; }
     }
 }

@@ -26,7 +26,17 @@ namespace LocalAccountsApp
                 RequireUniqueEmail = true
             };
             // Configure validation logic for passwords
+#if DEBUG
             manager.PasswordValidator = new PasswordValidator
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
+            };
+#else
+manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
                 RequireNonLetterOrDigit = true,
@@ -34,6 +44,8 @@ namespace LocalAccountsApp
                 RequireLowercase = true,
                 RequireUppercase = true,
             };
+#endif
+
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {

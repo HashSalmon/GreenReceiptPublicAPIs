@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using LocalAccountsApp.MySQL;
 
 namespace LocalAccountsApp.Models
 {
@@ -20,9 +21,15 @@ namespace LocalAccountsApp.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        static ApplicationDbContext()
+        {
+            System.Data.Entity.Database.SetInitializer(new MySqlInitializer());
+        }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            
         }
         
         public static ApplicationDbContext Create()
