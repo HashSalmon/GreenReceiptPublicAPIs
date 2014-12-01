@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA", "DA\DA.csproj", "{9B0C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalAccountsApp", "LocalAccountsApp\LocalAccountsApp.csproj", "{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenReceiptRest", "GreenReceiptRest\GreenReceiptRest.csproj", "{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

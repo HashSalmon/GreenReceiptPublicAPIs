@@ -1,7 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using GreenReceiptRest;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(GreenReceiptRest.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
+
 namespace GreenReceiptRest
 {
     public partial class Startup
