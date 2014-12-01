@@ -25,7 +25,17 @@ namespace GreenReceiptRest
                 RequireUniqueEmail = true
             };
             // Configure validation logic for passwords
-#if DEBUG
+#if RELEASE
+            manager.PasswordValidator = new PasswordValidator
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = true,
+                RequireDigit = true,
+                RequireLowercase = true,
+                RequireUppercase = true,
+            };
+            
+#else
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
@@ -33,15 +43,6 @@ namespace GreenReceiptRest
                 RequireDigit = false,
                 RequireLowercase = false,
                 RequireUppercase = false,
-            };
-#else
-manager.PasswordValidator = new PasswordValidator
-            {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
             };
 #endif
 

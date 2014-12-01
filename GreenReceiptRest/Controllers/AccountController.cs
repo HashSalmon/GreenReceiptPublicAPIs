@@ -317,7 +317,7 @@ namespace GreenReceiptRest.Controllers
             return logins;
         }
 
-        // POST api/Account/Register
+         //POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
@@ -326,17 +326,9 @@ namespace GreenReceiptRest.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName};
 
-            IdentityResult result = null;
-            try
-            {
-                result = await UserManager.CreateAsync(user, model.Password);
-            }
-            catch (Exception ex)
-            {
-                int k = 10;
-            }
+            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
 
             if (!result.Succeeded)
@@ -346,6 +338,7 @@ namespace GreenReceiptRest.Controllers
 
             return Ok();
         }
+
 
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]

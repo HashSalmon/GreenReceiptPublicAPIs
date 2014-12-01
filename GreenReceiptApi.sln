@@ -13,22 +13,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenReceiptRest", "GreenRe
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Alex|Any CPU = Alex|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85CEF453-08E1-4437-8A87-ADD1C52A8C03}.Alex|Any CPU.ActiveCfg = Alex|Any CPU
+		{85CEF453-08E1-4437-8A87-ADD1C52A8C03}.Alex|Any CPU.Build.0 = Alex|Any CPU
 		{85CEF453-08E1-4437-8A87-ADD1C52A8C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{85CEF453-08E1-4437-8A87-ADD1C52A8C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85CEF453-08E1-4437-8A87-ADD1C52A8C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85CEF453-08E1-4437-8A87-ADD1C52A8C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0CA3A0-956C-418E-90FA-486CF773582E}.Alex|Any CPU.ActiveCfg = Alex|Any CPU
+		{9B0CA3A0-956C-418E-90FA-486CF773582E}.Alex|Any CPU.Build.0 = Alex|Any CPU
 		{9B0CA3A0-956C-418E-90FA-486CF773582E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B0CA3A0-956C-418E-90FA-486CF773582E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B0CA3A0-956C-418E-90FA-486CF773582E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B0CA3A0-956C-418E-90FA-486CF773582E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}.Alex|Any CPU.ActiveCfg = Alex|Any CPU
+		{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}.Alex|Any CPU.Build.0 = Alex|Any CPU
 		{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECBA641A-97AD-40D9-ACC1-DCF5F58FC1C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}.Alex|Any CPU.ActiveCfg = Alex|Any CPU
+		{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}.Alex|Any CPU.Build.0 = Alex|Any CPU
 		{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F8B7418-4CC3-40D4-92E8-0AB82285C32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
