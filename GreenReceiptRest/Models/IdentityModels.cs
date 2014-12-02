@@ -39,16 +39,22 @@ namespace GreenReceiptRest.Models
         {
             
         }
-#else
+#elif DEBUG
             public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
             
         }
+#else 
+        public ApplicationDbContext()
+            : base("ReleaseConnection", throwIfV1Schema: false)
+        {
+            
+        }
 #endif
-        
-        
-        public static ApplicationDbContext Create()
+
+
+            public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }

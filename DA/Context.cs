@@ -11,14 +11,21 @@ namespace DA
 {
     public class Context : DbContext
     {
-        public DbSet<User> Users { get; set; } 
+        public DbSet<User> Users { get; set; }
 
         public Context()
-            : base(new MySqlConnection("Server=localhost;Database=db;Uid=root;Pwd=zheng;"), true)
+#if RELEASE
+            : base(new MySqlConnection("Server=98.190.150.67;Database=greenreceipt;Uid=root;Pwd=agrit817!!@@##"), true)
+#elif ALEX
+            : base(new MySqlConnection("Server=98.190.150.67;Database=greenreceipt;Uid=root;Pwd=Aa8175014"), true)
+#else
+            : base(new MySqlConnection("Server=127.0.0.1;Database=greenreceipt;Uid=root;Pwd=zheng"), true)
+#endif
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
         }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
