@@ -41,7 +41,7 @@ namespace GreenReceiptRest.Models
         }
 #elif DEBUG
             public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("KingsleyConnection", throwIfV1Schema: false)
         {
             
         }
