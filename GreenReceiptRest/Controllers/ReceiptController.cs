@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Domain.Objects;
+using GreenReceiptRest.Models;
 
 namespace GreenReceiptRest.Controllers
 {
@@ -22,8 +24,9 @@ namespace GreenReceiptRest.Controllers
         }
 
         // POST: api/Receipt
-        public void Post([FromBody]string value)
+        public void Post(ReceiptBingingModel model)
         {
+
         }
 
         // PUT: api/Receipt/5

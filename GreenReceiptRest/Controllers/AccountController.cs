@@ -327,8 +327,17 @@ namespace GreenReceiptRest.Controllers
                 return BadRequest(ModelState);
             }
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName};
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+            IdentityResult result = null;
+            try
+            {
+ result = await UserManager.CreateAsync(user, model.Password);
+            }
+            catch (Exception ex)
+            {
+                var k = ex;
+                var t = k;
+            }
+            
 
 
             if (!result.Succeeded)

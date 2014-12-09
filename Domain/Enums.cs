@@ -11,4 +11,13 @@ namespace Domain
     {
         
     }
+
+    public enum CardType
+    {
+        Unknown,
+        Amex,
+        Visa,
+        Mastercard,
+        Discover
+    }
 }

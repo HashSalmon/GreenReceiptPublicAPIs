@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Objects
 {
-    public class User : IBase
+    public class User : Base
     {
 
         public string FirstName { get; set; }
@@ -24,6 +24,16 @@ namespace Domain.Objects
             Email = string.Empty;
             Password = string.Empty;
             Username = string.Empty;
+        }
+
+        public override bool PreSave()
+        {
+            return true;
+        }
+
+        public override bool PreUpdate()
+        {
+            return true;
         }
     }
 }
