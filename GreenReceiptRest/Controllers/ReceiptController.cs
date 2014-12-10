@@ -11,19 +11,33 @@ namespace GreenReceiptRest.Controllers
 {
     public class ReceiptController : ApiController
     {
+        
         // GET: api/Receipt
+        /// <summary>
+        /// Get all receipts
+        /// </summary>
+        /// <returns>A list of receipts</returns>
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET: api/Receipt/5
+        /// <summary>
+        /// Get a receipt by id
+        /// </summary>
+        /// <param name="id">The receipt Id</param>
+        /// <returns>Return the specific receipt</returns>
         public string Get(int id)
         {
             return "value";
         }
 
         // POST: api/Receipt
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
         public void Post(ReceiptBingingModel model)
         {
 

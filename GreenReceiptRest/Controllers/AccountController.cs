@@ -48,6 +48,9 @@ namespace GreenReceiptRest.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         // GET api/Account/UserInfo

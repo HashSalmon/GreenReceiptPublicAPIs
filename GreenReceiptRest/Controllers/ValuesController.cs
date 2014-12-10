@@ -9,7 +9,11 @@ namespace GreenReceiptRest.Controllers
     [Authorize]
     public class ValuesController : ApiController
     {
-        // GET api/values
+        
+        /// <summary>
+        /// Test Get() value
+        /// </summary>
+        /// <returns>String</returns>
         public string Get()
         {
             //try
