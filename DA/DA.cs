@@ -15,11 +15,13 @@ namespace DA
             where T : Base
         {
             if (obj == null) return false;
+
             try
             {
                 bool saveCall = (obj.Id == 0);
                 if (obj.Id == 0 && !obj.PreSave()) return false;
                 if (obj.Id > 0 && !obj.PreUpdate()) return false;
+
                 using (Context context = new Context())
                 {
                     if (obj.Id == 0)
@@ -34,6 +36,7 @@ namespace DA
                     }
                     context.SaveChanges();
                 }
+
                 if(obj.PostSave != null && saveCall) Task.Factory.StartNew(obj.PostSave);
                 else if (obj.PostUpdate != null) Task.Factory.StartNew(obj.PostUpdate);
                 return true;

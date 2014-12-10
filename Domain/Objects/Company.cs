@@ -10,6 +10,7 @@ namespace Domain.Objects
     public class Company : Base
     {
         public virtual ICollection<Store> Stores { get; set; }
+
         public override bool PreSave()
         {
             return true;

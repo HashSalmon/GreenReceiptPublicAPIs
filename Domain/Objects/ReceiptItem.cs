@@ -10,7 +10,10 @@ namespace Domain.Objects
     public class ReceiptItem :Base
     {
         public string ItemName { get; set; }
+
         public decimal Price { get; set; }
+
+        public virtual Receipt Receipt { get; set; } 
 
         public override bool PreSave()
         {

@@ -9,7 +9,9 @@ namespace Domain.Objects
     public class Store : Base
     {
         public long CompanyId { get; set; }
-        public Company Company { get; set; }
+        
+        public virtual Company Company { get; set; }
+
         public override bool PreSave()
         {
             return true;
