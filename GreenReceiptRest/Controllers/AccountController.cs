@@ -18,6 +18,11 @@ using Microsoft.Owin.Security.OAuth;
 
 namespace GreenReceiptRest.Controllers
 {
+    /// <summary>
+    /// Account controller to control an user's account actions
+    /// such as registering an account, logging in and 
+    /// logging out.
+    /// </summary>
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
@@ -53,7 +58,12 @@ namespace GreenReceiptRest.Controllers
         /// </summary>
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
+        
         // GET api/Account/UserInfo
+        /// <summary>
+        /// Retrieve an user's information
+        /// </summary>
+        /// <returns>Return an user's information</returns>
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
@@ -69,6 +79,10 @@ namespace GreenReceiptRest.Controllers
         }
 
         // POST api/Account/Logout
+        /// <summary>
+        /// Logout an user
+        /// </summary>
+        /// <returns>Return an acction result. 200 OK.</returns>
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
@@ -77,6 +91,12 @@ namespace GreenReceiptRest.Controllers
         }
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
+        /// <summary>
+        /// Retrieve manage info
+        /// </summary>
+        /// <param name="returnUrl"></param>
+        /// <param name="generateState"></param>
+        /// <returns></returns>
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
@@ -117,6 +137,11 @@ namespace GreenReceiptRest.Controllers
         }
 
         // POST api/Account/ChangePassword
+        /// <summary>
+        /// Change an user's password
+        /// </summary>
+        /// <param name="model">ChangePassword model</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
@@ -137,6 +162,11 @@ namespace GreenReceiptRest.Controllers
         }
 
         // POST api/Account/SetPassword
+        /// <summary>
+        /// Set an user's password
+        /// </summary>
+        /// <param name="model">SetPassword model</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
@@ -156,6 +186,11 @@ namespace GreenReceiptRest.Controllers
         }
 
         // POST api/Account/AddExternalLogin
+        /// <summary>
+        /// Add an external login account
+        /// </summary>
+        /// <param name="model">External Login model</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
@@ -194,6 +229,11 @@ namespace GreenReceiptRest.Controllers
         }
 
         // POST api/Account/RemoveLogin
+        /// <summary>
+        /// Remove an user's login
+        /// </summary>
+        /// <param name="model">Remove Login model</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
@@ -223,6 +263,12 @@ namespace GreenReceiptRest.Controllers
         }
 
         // GET api/Account/ExternalLogin
+        /// <summary>
+        /// Get external login
+        /// </summary>
+        /// <param name="provider">The external login provider</param>
+        /// <param name="error">An error message</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
@@ -280,6 +326,12 @@ namespace GreenReceiptRest.Controllers
         }
 
         // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+        /// <summary>
+        /// Get the external logins
+        /// </summary>
+        /// <param name="returnUrl">The return URL</param>
+        /// <param name="generateState">The generate state</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [AllowAnonymous]
         [Route("ExternalLogins")]
         public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
@@ -321,6 +373,11 @@ namespace GreenReceiptRest.Controllers
         }
 
          //POST api/Account/Register
+        /// <summary>
+        /// Register an account for an user
+        /// </summary>
+        /// <param name="model">Register model</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
@@ -353,6 +410,11 @@ namespace GreenReceiptRest.Controllers
 
 
         // POST api/Account/RegisterExternal
+        /// <summary>
+        /// Register an external account for an user.
+        /// </summary>
+        /// <param name="model">External model</param>
+        /// <returns>Return an action result. 200 OK or 400 Bad request</returns>
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]
@@ -385,6 +447,10 @@ namespace GreenReceiptRest.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -28,7 +28,7 @@ namespace DA
             var receipts = new List<Receipt>
             {
                 new Receipt {StoreId = 1, Barcode="123", PurchaseDate = new DateTime(), Tax = 1.0M, SubTotal = 1.5M, Total = 2.5M, CardType = CardType.Visa, LastFourCardNumber = "1000", ReturnDate = new DateTime(15), 
-                  CashierId = "1", MiscMessage = "nil", User = new User(), Store = new Store(), ReceiptItems = new List<ReceiptItem>},
+                  CashierId = "1", MiscMessage = "nil", User = new User(), Store = new Store(), ReceiptItems = new List<ReceiptItem>()}
             };
 
             var users = new List<User>

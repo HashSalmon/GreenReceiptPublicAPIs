@@ -2,6 +2,9 @@
 
 namespace GreenReceiptRest.Controllers
 {
+    /// <summary>
+    /// The home controller
+    /// </summary>
     public class HomeController : Controller
     {
         public ActionResult Index()
